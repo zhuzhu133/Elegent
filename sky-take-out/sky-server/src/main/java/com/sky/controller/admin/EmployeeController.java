@@ -93,8 +93,9 @@ public class EmployeeController {
       PageResult pageResult= employeeService.page(employeePageQueryDTO);
       return Result.success(pageResult);
     }
+
     /**
-     * 启用禁用员工账号
+     * 启用禁用员工
      * @param status
      * @param id
      * @return
@@ -107,4 +108,21 @@ public class EmployeeController {
         return Result.success();
     }
 
+    /**
+     * 根据id查询信息
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    public Result<Employee> getById(@PathVariable Long id){
+        Employee employee=employeeService.getById(id);
+        return Result.success(employee);
+    }
+
+    @PutMapping
+    public Result update(@RequestBody EmployeeDTO employeeDTO){
+        log.info("编辑员工信息：{}", employeeDTO);
+        employeeService.update(employeeDTO);
+        return Result.success();
+    }
 }
