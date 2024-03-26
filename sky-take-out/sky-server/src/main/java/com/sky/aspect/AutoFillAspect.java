@@ -5,7 +5,6 @@ import com.sky.context.BaseContext;
 import com.sky.enumeration.OperationType;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -25,8 +24,9 @@ import java.time.LocalDateTime;
 public class AutoFillAspect {
 
     /**
-     * 切入点
+     * 切入点   @annotation(……) ：根据注解匹配    execution(……)：根据方法的签名来匹配
      */
+
     @Pointcut("execution(* com.sky.mapper.*.*(..)) && @annotation( com.sky.annotation.AutoFill)")
     public void autoPointcut(){}
 
