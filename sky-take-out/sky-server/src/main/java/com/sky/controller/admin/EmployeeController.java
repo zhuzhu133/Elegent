@@ -104,7 +104,7 @@ public class EmployeeController {
     @ApiOperation("启用禁用员工账号")
     public Result startOrStop(@PathVariable Integer status,Long id){
         log.info("启用禁用员工账号：{},{}",status,id);
-        employeeService.startOrStop(status,id);//后绪步骤定义
+        employeeService.startOrStop(status,id);
         return Result.success();
     }
 
@@ -119,6 +119,11 @@ public class EmployeeController {
         return Result.success(employee);
     }
 
+    /**
+     * 更新员工信息
+     * @param employeeDTO
+     * @return
+     */
     @PutMapping
     public Result update(@RequestBody EmployeeDTO employeeDTO){
         log.info("编辑员工信息：{}", employeeDTO);
