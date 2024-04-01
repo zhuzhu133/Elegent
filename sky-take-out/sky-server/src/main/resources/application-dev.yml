@@ -16,3 +16,6 @@ sky:
     endpoint: oss-cn-beijing.aliyuncs.com
     access-key-secret: UMS5WSe5DRFaMpQbCWBBWKAMP2Yd6u
     bucket-name: zhuzhuweb11
+  wechat:
+    appid: wx388cbd50e9a3ca27
+    secret: e7270cf07d9ef73061cd65ad77987139
