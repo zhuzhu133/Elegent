@@ -9,6 +9,7 @@ import com.sky.vo.DishItemVO;
 import com.sky.vo.SetmealVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -45,4 +46,8 @@ public interface SetmealMapper {
 
     @AutoFill(value = OperationType.INSERT)
     void insert(Setmeal setmeal);
+
+
+
+    void update(Setmeal setmeal);
 }
