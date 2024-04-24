@@ -61,4 +61,12 @@ public class ShoppingCartController {
     return Result.success();
     }
 
+
+    @PostMapping("/sub")
+    public  Result subShoppingCart(@RequestBody ShoppingCartDTO shoppingCartDTO){
+       shoppingCartService.subShoppingCart(shoppingCartDTO);
+       return Result.success();
+    }
+
+
 }
