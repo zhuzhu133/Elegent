@@ -54,7 +54,6 @@ public class AddressBookController {
         AddressBook addressBook = addressBookService.getById(id);
         return Result.success(addressBook);
     }
-
     /**
      * 根据id修改地址
      *
